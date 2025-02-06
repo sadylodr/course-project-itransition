@@ -1,0 +1,30 @@
+﻿@model CourseProject.Models.Template
+@{
+    ViewData["Title"] = "Create template";
+}
+
+<h2>Create template</h2>
+
+<form asp-action="Create" method="post">
+    <div class="mb-3">
+        <label class="form-label">Name</label>
+        <input asp-for="Title" class="form-control">
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Description</label>
+        <textarea asp-for="Description" class="form-control"></textarea>
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Category</label>
+        <select asp-for="Topic" class="form-control">
+            <option value="Education">Education</option>
+            <option value="Quiz">Quiz</option>
+            <option value="Other">Other</option>
+        </select>
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Public?</label>
+        <input type="checkbox" asp-for="IsPublic">
+    </div>
+    <button type="submit" class="btn btn-success">Create</button>
+</form>
